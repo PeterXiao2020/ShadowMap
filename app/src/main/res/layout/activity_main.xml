@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:background="@color/gray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:background="@drawable/banner_green"
+        android:text="@string/title"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <ImageView
+        android:id="@+id/line1"
+        android:layout_below="@+id/title"
+        android:background="@color/line_gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <ImageView
+        android:id="@+id/line2"
+        android:layout_above="@+id/button_layout"
+        android:background="@color/line_gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <RelativeLayout
+        android:id="@+id/button_layout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/refresh"
+            android:background="@drawable/banner_green"
+            android:text="@string/refresh"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="60dp"
+            android:layout_centerVertical="true"
+            android:layout_width="80dp"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/exit"
+            android:background="@drawable/button_red"
+            android:text="@string/exit"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginRight="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="80dp"
+            android:layout_height="40dp" />
+
+    </RelativeLayout>
+
+    <zln.shadowdemo.Render.MyGLView
+        android:id="@+id/model"
+        android:layout_below="@+id/line1"
+        android:layout_above="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

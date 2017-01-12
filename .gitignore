@@ -46,4 +46,11 @@ captures/
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
 
-/app/src/main/assets/
+/app/src/main/assets/20160518014050849623.jpg
+/app/src/main/assets/zuozi.mtl
+/app/src/main/assets/zuozi.obj
+/app/src/main/assets/20160520033826715497.jpg
+/app/src/main/assets/20160520033826715638.jpg
+/app/src/main/res/drawable-xxhdpi/
+/app/src/main/res/drawable-xhdpi/
+

@@ -94,7 +94,7 @@ public class MyGLView extends GLSurfaceView implements GLSurfaceView.Renderer{
     private final float[] lightPosView = new float[4];
 
     //model data
-    private LoadModel obj = ReadObjAndMtl("zuozi.obj", "zuozi.mtl");
+    private LoadModel obj = ReadObjAndMtl("bowl1.obj", "bowl1.mtl");
 
     //buffer
     private GLBuffer vertexBuffer;
@@ -119,6 +119,7 @@ public class MyGLView extends GLSurfaceView implements GLSurfaceView.Renderer{
     //shader program handles
     private int m_mvMatrixUniform;
     private int m_mvpMatrixUniform;
+    private int m_normalMatrixUniform;
     private int m_shadowProjMatrixUniform;
     private int m_positionAttribute;
     private int m_normalAttribute;
@@ -277,6 +278,7 @@ public class MyGLView extends GLSurfaceView implements GLSurfaceView.Renderer{
         m_lightPosUniform = glGetUniformLocation(activeProgram, Constant.U_LIGHT_POS);
         m_positionAttribute = glGetAttribLocation(activeProgram, Constant.A_POSITION);
         m_normalAttribute = glGetAttribLocation(activeProgram, Constant.A_NORMAL);
+        m_normalMatrixUniform = glGetAttribLocation(activeProgram, Constant.U_NORMAL_MATRIX);
 
         //depth map handles
         int depthProgram = depthMapProgram.getProgram();
@@ -334,10 +336,17 @@ public class MyGLView extends GLSurfaceView implements GLSurfaceView.Renderer{
         //load matrix
         float[] MVPMatrix = new float[16];
         float[] MVMatrix = new float[16];
+        float[] NormalMatrix = new float[16];
+        float[] tempMatrix = new float[16];
         multiplyMM(MVMatrix, 0, mViewMatrix, 0, getModelMatrix(), 0);
         multiplyMM(MVPMatrix, 0, mProjectionMatrix, 0, MVMatrix, 0);
-        glUniformMatrix4fv(glGetUniformLocation(activeProgram, "uMVMatrix"), 1, false, MVMatrix, 0);
-        glUniformMatrix4fv(glGetUniformLocation(activeProgram, "uMVPMatrix"), 1, false, MVPMatrix, 0);
+        Matrix.invertM(tempMatrix, 0, MVMatrix, 0);
+        Matrix.transposeM(NormalMatrix, 0, tempMatrix, 0);
+
+        glUniformMatrix4fv(m_mvMatrixUniform, 1, false, MVMatrix, 0);
+        glUniformMatrix4fv(m_mvpMatrixUniform, 1, false, MVPMatrix, 0);
+        //glUniformMatrix4fv(m_normalMatrixUniform, 1, false, NormalMatrix, 0);
+
 
         //bind depth texture
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
@@ -345,22 +354,22 @@ public class MyGLView extends GLSurfaceView implements GLSurfaceView.Renderer{
         GLES20.glUniform1i(m_shadowTextureUniform, 0);
 
         //load model data
-        glVertexAttribPointer(glGetAttribLocation(activeProgram, "aPosition"), 4, GL_FLOAT,
+        glVertexAttribPointer(m_positionAttribute, 4, GL_FLOAT,
                 false, Constant.POINT_SIZE, Constant.POINT_SIZE_POS_OFFSET);
-        glVertexAttribPointer(glGetAttribLocation(activeProgram, "aNormal"), 4, GL_FLOAT,
+        glVertexAttribPointer(m_normalAttribute, 4, GL_FLOAT,
                 false, Constant.POINT_SIZE, Constant.POINT_SIZE_NOR_OFFSET);
 
-        glEnableVertexAttribArray(glGetAttribLocation(activeProgram, "aPosition"));
-        glEnableVertexAttribArray(glGetAttribLocation(activeProgram, "aNormal"));
+        glEnableVertexAttribArray(m_positionAttribute);
+        glEnableVertexAttribArray(m_normalAttribute);
         glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer.bufferId);
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer.bufferId);
 
         //render model
         for(int i = 0; i < obj.getNum(); i++) {
-            glUniform3f(glGetUniformLocation(activeProgram, "uDiffuse"), obj.getDiffuses().get(i).x,
+            glUniform3f(m_diffuseUniform, obj.getDiffuses().get(i).x,
                     obj.getDiffuses().get(i).y, obj.getDiffuses().get(i).z);
-            glUniform3f(glGetUniformLocation(activeProgram, "uSpecular"), obj.getSpeculars().get(i).x,
+            glUniform3f(m_specularUniform, obj.getSpeculars().get(i).x,
                     obj.getSpeculars().get(i).y, obj.getSpeculars().get(i).z);
             GLES20.glActiveTexture(GLES20.GL_TEXTURE1);
             GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textureId.get(i));
@@ -379,7 +388,7 @@ public class MyGLView extends GLSurfaceView implements GLSurfaceView.Renderer{
         GLES20.glViewport(0, 0, displayWidth, displayHeight);
 
         // Clear color and buffers
-        GLES20.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+        GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         GLES20.glClear( GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
 
         // Start using the shader
@@ -394,9 +403,9 @@ public class MyGLView extends GLSurfaceView implements GLSurfaceView.Renderer{
         glUniformMatrix4fv(d_mvpMatrixUniform, 1, false, light_MVPMatrix, 0);
 
         //load model data
-        glVertexAttribPointer(glGetAttribLocation(depthMapProgram.getProgram(), "aPosition"), 4, GL_FLOAT,
+        glVertexAttribPointer(d_positionAttribute, 4, GL_FLOAT,
                 false, Constant.POINT_SIZE, 0);
-        glEnableVertexAttribArray(glGetAttribLocation(depthMapProgram.getProgram(), "aPosition"));
+        glEnableVertexAttribArray(d_positionAttribute);
         glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer.bufferId);
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer.bufferId);

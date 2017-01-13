@@ -18,6 +18,9 @@ void main(){
 
         // Material
         vec3 ka = vec3(0.05);
+        if(uDiffuse.x == 1.0){
+            ka = vec3(0.3);
+        }
         vec3 kd = uDiffuse;
         vec3 ks = uSpecular;
         float alpha = 1.0;
@@ -34,7 +37,7 @@ void main(){
         vec3 R = reflect(L, N);
 
 
-        vec3 lightDir = normalize(uLightPos - vPosition);
+        //vec3 lightDir = normalize(uLightPos - vPosition);
         float shadow = 1.0f;
         if(vShadowCoord.w > 0.0){
               vec4 shadowMapPos = vShadowCoord / vShadowCoord.w;
@@ -64,7 +67,7 @@ void main(){
 
         // Surface
         vec3 surface;
-        if(decal.a > 0.0)
+        if(uDiffuse.x == 0.0)
             surface = decal.rgb*df + decal.rgb*sf;
         else
             surface = Ip;

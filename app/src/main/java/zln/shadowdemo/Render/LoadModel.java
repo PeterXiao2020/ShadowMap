@@ -237,6 +237,7 @@ public class LoadModel {
                 case "Kd":
                     while(i + 1 < num){
                         diffuses.add(new Vec3(0.0f, 0.0f, 0.0f));
+                        i++;
                     }
                     diffuses.add(new Vec3(Arrays.copyOfRange(tokens, 1, tokens.length)));
                     i++;
@@ -244,6 +245,7 @@ public class LoadModel {
                 case "Ks":
                     while(j + 1 < num){
                         speculars.add(new Vec3(0.0f, 0.0f, 0.0f));
+                        j++;
                     }
                     speculars.add(new Vec3(Arrays.copyOfRange(tokens, 1, tokens.length)));
                     j++;
@@ -251,6 +253,8 @@ public class LoadModel {
                 case "map_Kd":
                     while(k + 1 < num){
                         texFilenames.add("");
+                        diffuses.set(k, new Vec3(1.0f, 1.0f, 1.0f));
+                        k++;
                     }
                     texFilenames.add(tokens[1]);
                     k++;
@@ -270,6 +274,7 @@ public class LoadModel {
         Log.v("zln-tex: ", speculars.size() + "");
         while(k < num){
             texFilenames.add("");
+            diffuses.set(k, new Vec3(1.0f, 1.0f, 1.0f));
             k++;
         }
         Log.v("zln-tex: ", texFilenames.size() + "");

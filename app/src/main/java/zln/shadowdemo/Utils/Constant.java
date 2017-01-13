@@ -27,6 +27,7 @@ public class Constant {
     public static final String U_SHADOW_PROJ_MATRIX = "uShadowProjMatrix";
     public static final String A_POSITION = "aPosition";
     public static final String A_NORMAL = "aNormal";
+    public static final String U_NORMAL_MATRIX = "uNormalMatrix";
     public static final String U_TEXTURE = "uTexture";
     public static final String U_SHADOW_TEXTURE = "uShadowTexture";
     public static final String U_DIFFUSE = "uDiffuse";

@@ -2,6 +2,8 @@
 uniform mat4 uMVMatrix;
 uniform mat4 uMVPMatrix;
 uniform mat4 uShadowProjMatrix;
+//uniform mat4 uNormalMatrix;
+
 
 attribute vec4 aPosition;
 attribute vec4 aNormal;

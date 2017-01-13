@@ -7,8 +7,53 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="47480335dc3069c27fbe39b33a8c064a1c63c020">
+        sha1="89dddb2e63cbe0d0fa6b56f6766598b063d83e3a">
         <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/instant-run_fbf5fa3b2bfee087c06981bb91cb022a023d2420.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="468b04340da0358b1971f3935c37569a2fe7fc28">
+        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_231731aa16b43d674451637817f5fe30675187dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.0_03f0805fe6bfd4f1d23c4b46c6231303d016075d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_8f5deda38e8b75c11fa0c29fef87e8ec85e63543.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_735d1a88d7fffb361b7232c73c9796a1f3a321d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.0_f71b96855c1cb666babf5d09b4eb42ef575de2b7.jar" />
     </item>
     <item
         is-multidex="false"
@@ -48,30 +93,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f03b0786f3577e6fa98a5003bdffa29d79932779">
-        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_231731aa16b43d674451637817f5fe30675187dd.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
         <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.0_5fea60e16efc2447dbaccd819bd5e18023e74874.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.0_03f0805fe6bfd4f1d23c4b46c6231303d016075d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,15 +120,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_8f5deda38e8b75c11fa0c29fef87e8ec85e63543.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -111,30 +129,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_735d1a88d7fffb361b7232c73c9796a1f3a321d7.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
         <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.0_4fa8468209412d795e81a13dc49cd29b402f7516.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/Users/zln/Code/Android/ShadowDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.0_f71b96855c1cb666babf5d09b4eb42ef575de2b7.jar" />
     </item>
     <item
         is-multidex="false"
